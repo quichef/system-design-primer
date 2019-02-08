@@ -1,6 +1,6 @@
 *[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) ∙ [French](README-fr.md) | [Arabic](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [Bengali](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [German](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [Greek](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Korean](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [Persian](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Spanish](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [Thai](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [Vietnamese](https://github.com/donnemartin/system-design-primer/issues/127) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
-# The System Design Primer
+# Introduction à la conception de systèmes
 
 <p align="center">
   <img src="http://i.imgur.com/jj3A5N8.png">
@@ -8,81 +8,81 @@
 </p>
 
 ## Motivation
-
-> Learn how to design large-scale systems.
+> Apprendre a conceptionner des systèmes à grande echelle.
 >
-> Prep for the system design interview.
+> Préparation pour les entretiens de conception de systèmes.
 
-### Learn how to design large-scale systems
+### Apprendre a conceptionner des systèmes à grande echelle
 
-Learning how to design scalable systems will help you become a better engineer.
+Apprendre à conceptionner des systèmes à grande echelle vous permettra de devenir une meilleur ingénieur.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+La conception de systèmes est un vaste sujet. Une **grande quantité de ressources dispersée sur le web** traite des principes de la conception de systèmes.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Ce dossier est une **collection organisée** des ressources disponibles pour vous aider à apprendre à créer des systèmes à grande echelle.
 
-### Learn from the open source community
+### Apprendre de la communauté open source
 
-This is a continually updated, open source project.
+C'est un dépôt open source continuellement mis à jour.
 
-[Contributions](#contributing) are welcome!
+Voas [Contributions](#contributing) sont les bienvenues !
 
-### Prep for the system design interview
+### Préparation pour les entretiens de conception de systèmes
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+En plus des entretiens de code, la conception de système est un **composant requis** du **processus d'entretien technique** dans plusieurs entreprises tech.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Répondez aux questions communes d'entretien de conception système** et **comparez** vos résultats avec les **exemples de solutions**: discussions, code, et diagrammes.
 
-Additional topics for interview prep:
+Sujets supplémentaires pour la préparation de l'entretien:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Guide d'étude](#study-guide)
+* [Comment appréhender les questions de conception de système](#how-to-approach-a-system-design-interview-question)
+* [Questions de conception de système, **avec solutions**](#system-design-interview-questions-with-solutions)
+* [Questions de conception Orientée objet, **avec solutions**](#object-oriented-design-interview-questions-with-solutions)
+* [Questions de conception de systèmes supplémentaires](#additional-system-design-interview-questions)
 
-## Anki flashcards
+## Cartes illustrées Anki
 
 <p align="center">
   <img src="http://i.imgur.com/zdCAkB3.png">
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+La [Bibliothèque de carte illustrées Anki](https://apps.ankiweb.net/) fournie utilise des répétitions espacées pour vous aider à retenir les concepts clés de la conception de système.
 
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Bibliothèque de conception de systèmes](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [Bibliothèque d'exercices de conception de systèmes](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Bibliothèque d'exercices d'Orientée objet](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Idéal pour les déplacements.
 
-### Coding Resource: Interactive Coding Challenges
+### Ressource de programmation: Défis intéractifs de programmation
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+À la recherche de ressources pour vous aider à préparer [**L'entretien de programmation**](https://github.com/donnemartin/interactive-coding-challenges) ?
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Jetez un oeil au dépôt vosin [**Défis interactifs de programmation**](https://github.com/donnemartin/interactive-coding-challenges), contentant une bibliothèque Anki supplémentaire:
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+* [Bibliothèque de programmation](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-> Learn from the community.
+## Contribuer
 
-Feel free to submit pull requests to help:
+> Apprendre de la communauté.
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+Libre à vous d'envoyer des pull requests pour aider à:
 
-Content that needs some polishing is placed [under development](#under-development).
+* Corriger des erreurs
+* Améliorer des sections
+* Ajouter des nouvelles sections
+* [Traduire](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+Les sections qui nécessitent des finitions sont placés dans la section [en développement](#under-development).
+
+Lisez les [directives de contribution](CONTRIBUTING.md).
 
 ## Index of system design topics
 
@@ -1784,3 +1784,4 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
 
     http://creativecommons.org/licenses/by/4.0/
+    
