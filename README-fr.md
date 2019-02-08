@@ -64,7 +64,7 @@ Idéal pour les déplacements.
   <br/>
 </p>
 
-Jetez un oeil au dépôt vosin [**Défis interactifs de programmation**](https://github.com/donnemartin/interactive-coding-challenges), contentant une bibliothèque Anki supplémentaire:
+Jetez un oeil au dépôt voisin [**Défis interactifs de programmation**](https://github.com/donnemartin/interactive-coding-challenges), contentant une bibliothèque Anki supplémentaire:
 
 
 * [Bibliothèque de programmation](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
