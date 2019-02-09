@@ -84,21 +84,21 @@ Les sections qui nécessitent des finitions sont placés dans la section [en dé
 
 Lisez les [directives de contribution](CONTRIBUTING.md).
 
-## Index of system design topics
+## Index des sujets de conception de système
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> Sommaire de divers sujets de conception de système, incluant pour et contre.
 >
-> Each section contains links to more in-depth resources.
+> Chaque section contient des liens vers des ressources approfondies.
 
 <p align="center">
   <img src="http://i.imgur.com/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
+* [Sujets de conception de système: Introduction](#system-design-topics-start-here)
+    * [Étape 1: Regarder la vidéo de mise à l'échelle](#step-1-review-the-scalability-video-lecture)
+    * [Étape 2: Lire l'article sur la mise à l'échelle](#step-2-review-the-scalability-article)
+    * [Étapes suivantes](#next-steps)
 * [Performance vs scalability](#performance-vs-scalability)
 * [Latency vs throughput](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
