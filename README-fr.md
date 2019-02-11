@@ -24,7 +24,7 @@ Ce dossier est une **collection organisée** des ressources disponibles pour vou
 
 C'est un dépôt open source continuellement mis à jour.
 
-Voas [Contributions](#contributing) sont les bienvenues !
+Vos [Contributions](#contributing) sont les bienvenues !
 
 ### Préparation pour les entretiens de conception de systèmes
 
