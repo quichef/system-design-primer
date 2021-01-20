@@ -64,10 +64,10 @@ Idéal pour les déplacements.
   <br/>
 </p>
 
-Jetez un oeil au dépôt voisin [**Défis interactifs de programmation**](https://github.com/donnemartin/interactive-coding-challenges), contentant une bibliothèque Anki supplémentaire:
+Jetez un oeil au dépôt voisin [**Défis interactifs de programmation**](https://github.com/donnemartin/interactive-coding-challenges), contenant un jeu de cartes Anki supplémentaire:
 
 
-* [Bibliothèque de programmation](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Jeu de cartes de programmation](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## Contribuer
 
@@ -128,7 +128,7 @@ Lisez les [directives de contribution](CONTRIBUTING.md).
     * [Microservices](#microservices)
     * [Découverte de service](#service-discovery)
 * [Base de données](#database)
-    * [Systeme de Gestion Base de Données Relationel (SGBDR)](#relational-database-management-system-rdbms)
+    * [Système de Gestion de Base de Données Relationelle (SGBDR)](#relational-database-management-system-rdbms)
         * [Réplication principale-secondaire](#master-slave-replication)
         * [Réplication principale-principale](#master-master-replication)
         * [Féderation](#federation)
@@ -154,195 +154,205 @@ Lisez les [directives de contribution](CONTRIBUTING.md).
         * [Write-through](#write-through)
         * [Write-behind (write-back)](#write-behind-write-back)
         * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
+* [Asynchronisme](#asynchronism)
     * [File d'attente de messages](#message-queues)
     * [File d'attente de tâches](#task-queues)
-    * [Back pressure](#back-pressure)
+    * [Contre-pression](#back-pressure)
 * [Communication](#communication)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
+    * [Protocole de contrôle de transmissions (TCP)](#transmission-control-protocol-tcp)
+    * [Protocole de diagramme utilisateur (UDP)](#user-datagram-protocol-udp)
+    * [Appel de procédure à distance (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
 * [Securité](#security)
 * [Appendice](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
+    * [Tableau Puissance de deux](#powers-of-two-table)
+    * [Les chiffres de latence que chaque programmeur devrait connaître](#latency-numbers-every-programmer-should-know)
+    * [Questions d'entretien supplémentaires sur la conception de système](#additional-system-design-interview-questions)
+    * [Architectures du monde réel](#real-world-architectures)
+    * [Architectures en entreprise](#company-architectures)
+    * [Blogs d'ingénierie de quelques entreprises](#company-engineering-blogs)
+* [En cours](#under-development)
 * [Crédits](#credits)
 * [Contact info](#contact-info)
-* [License](#license)
+* [Licence](#license)
 
-## Study guide
+## Guide
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Suggestion de sujets à revoir basée sur votre chronologie d'entretien (courte, moyenne, longue).
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Q: Pour les entretiens, dois-je savoir tout ce qu'il y a dans ce guide?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**A: Non, il n'est pas nécessaire de savoir tout ce qu'il y a dans ce guide pour se préparer aux entretiens**.
 
-What you are asked in an interview depends on variables such as:
+Les questions auxquelles il faut s'attendre dépendent de plusieurs variables telles que : 
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Votre expérience
+* Votre compétence technique
+* Le poste que vous visez en entretien
+* L'entreprise pour laquelle vous passez votre entretien
+* La chance
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+On s'attend à ce que les candidats plus expérimentés aient une plus grande connaissance sur la conception de système, d'autant plus s'ils ont le rôle d'architecte ou team lead. Il est fort probable que les plus grandes entreprises technologiques fassent passer un ou plusieurs tours d'entretiens sur la conception de système.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Commencez par avoir une approche générale qui couvre un large spectre avant d'approfondir sur certains domaines. Ça aide d'avoir un peu de connaissance sur les différents sujets clés de conception de système. Vous pouvez ajuster ce guide à votre préparation en se basant sur votre chronologie d'entretien, votre expérience, le(s) poste(s) que vous visez et dans quelles entreprises.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 
-| | Short | Medium | Long |
+* **Préparation courte** - Viser **large** sur les sujets de conception de système. Pratiquer en résolvant **quelques** questions d'entretien.
+* **Préparation moyenne** - Viser **large** et **approfondir un peu** sur les sujets de conception de système. Pratiquer en résolvant **beaucoup** de questions d'entretien.
+* **Préparation longue** - Viser **large** et **appronfondir le plus possible** sur les sujets de conception de système. Pratiquer en résolvant **la plupart** des questions d'entretien.
+
+| | Court | Moyen | Long |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| Lire les [Sujets sur conception de système](#index-of-system-design-topics) pour avoir une connaissance large sur comment marchent les systèmes | :+1: | :+1: | :+1: |
+| Lire quelques articles sur les [blogs techniques](#company-engineering-blogs) des entreprises où sont prévus les entretiens | :+1: | :+1: | :+1: |
+| Lire les [Architectures du monde réel](#real-world-architectures) | :+1: | :+1: | :+1: |
+| Revoir [Comment approcher une question d'entretien sur la conception de système](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| Pratiquer [Questions d'entretien sur la conception de système avec les solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
+| Pratiquer [Questions d'entretien la conception orientée objet avec les solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
+| Revoir [Questions supplémentaires sur la conception de système](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## How to approach a system design interview question
+## Comment approcher une question d'entretien sur la conception de système
 
-> How to tackle a system design interview question.
+> Comment aborder une question d'entretien sur la conception de système.
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+L'entretien sur la conception de système est une **conversation ouverte**. On attend de vous que vous la meniez.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Vous pouvez utiliser les étapes suivantes pour mener la discussion. Pour vous habituer au processus et vous en imprégner, pratiquez les [Questions d'entretien sur la conception de système avec solutions](#system-design-interview-questions-with-solutions) comme suit.
 
-### Step 1: Outline use cases, constraints, and assumptions
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+### Etape 1 : Dresser les cas d'usage, les contraintes et les hypothèses
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+Recueillez les besoins et cadrez le problème. Posez des questions pour clarifier les cas d'usage et les contraintes. Discutez des hypothèses.
 
-### Step 2: Create a high level design
+* Qui va l'utiliser?
 
-Outline a high level design with all important components.
+* Comment vont-ils l'utiliser?
+* Combien y aura-t-il d'utilisateurs?
+* Que fait le système?
+* Quelles sont les entrées-sorties du système?
+* Quelle est la quantité de données qu'on s'attend à traiter?
+* Combien de requêtes par seconde attendues ?
 
-* Sketch the main components and connections
-* Justify your ideas
+* Quel est le ratio lecture/écriture qu'on attendu ?
 
-### Step 3: Design core components
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+### Etape 2: Créer une conception de haut niveau
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+Faites une ébauche de conception de haut niveau avec tous les composants importants.
 
-### Step 4: Scale the design
+* Esquissez les composants principaux et leurs connexions
+* Justifiez vos idées
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+### Etape 3: Concevoir les composants essentiels
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
+Entrez dans les détails de chaque composant essentiel. Par exemple, si on vous demande de [concevoir un service de raccourcissement d'URL](solutions/system_design/pastebin/README.md), discutez de : 
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+* Générer et conserver un hachage de l'URL complète
+    * [MD5](solutions/system_design/pastebin/README.md) et [Base62](solutions/system_design/pastebin/README.md)
+    * Collisions de hachage
+    * SQL ou NoSQL
+    * Schéma de base de données
+* Traduire l'URL de hachage en URL complète
+    * Recherche en base de données
+* API et conception orientée objet
 
-### Back-of-the-envelope calculations
+### Etape 4: Mise à l'echelle de la conception
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+Etant donné les contraintes, identifiez et éliminez les goulets d'étranglement. Par exemple pour régler des problèmes de *scalabilité*, avez-vous besoin de?
 
-### Source(s) and further reading
+* Répartiteur de charge
+* Mise à l'echelle horizontale
+* Mise en cache
+* Eclatement de base de données (*Database sharding*)
 
-Check out the following links to get a better idea of what to expect:
+Discutez des solutions potentielles et des compromis. Toute chose est un compromis. Réglez les goulets d'étranglement en utilisant [les principes de conception de systèmes à grande échelle](#index-of-system-design-topics).
 
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+### Calculs de coin de table
 
-## System design interview questions with solutions
+Vous serez peut-être amené à donner des estimations à la main. Référez vous à l'[Appendice](#appendix) pour les ressources suivantes :
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+* [Utiliser des calculs de coin de table](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Tableau Puissance de deux](#powers-of-two-table)
+* [Les chiffres de latence que chaque programmeur devrait connaître](#latency-numbers-every-programmer-should-know)
+
+### Source(s) et lecture supplémentaires
+
+Consultez les liens suivants pour avoir une meilleure idée de ce qui est attendu :
+
+* [Comment réussir avec brio un entretien de conception de système](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [L'entretien de conception de système](http://www.hiredintech.com/system-design)
+* [Introduction aux entretiens sur l'architecture et la conception de systèmes](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+
+## Questions et solutions sur la conception de système
+
+> Questions fréquentes sur la conception de système avec des exemples de discussions, de code et de diagrammes.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Les solutions se trouvent dans le répertoire `solutions/`.
 
 | Question | |
 |---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Concevoir Pastebin.com (ou Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
+| Concevoir la *timeline* et la recherche de Twitter (ou le fil d'activité et la recherche de Facebook) | [Solution](solutions/system_design/twitter/README.md) |
+| Concevoir un *crawler Web* | [Solution](solutions/system_design/web_crawler/README.md) |
+| Concevoir Mint.com | [Solution](solutions/system_design/mint/README.md) |
+| Concevoir la structure de données d'un réseau social | [Solution](solutions/system_design/social_graph/README.md) |
+| Concevoir un tableau associatif pour un moteur de recherche | [Solution](solutions/system_design/query_cache/README.md) |
 
-### Design Pastebin.com (or Bit.ly)
+| Concevoir le classement des ventes par catégorie de Amazon | [Solution](solutions/system_design/sales_rank/README.md) |
+| Concevoir un système qui peut supporter des millions d'utilisateurs sur AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+| Ajouter une question de conception de système | [Contribute](#contributing) |
+
+### Concevoir Pastebin.com (ou Bit.ly)
+
+[Voir l'exercice et la solution](solutions/system_design/pastebin/README.md)
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Concevoir la *timeline* et la recherche de Twitter (ou le fil d'activité et la recherche de Facebook)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Voir l'exercice et la solution](solutions/system_design/twitter/README.md)
 
 ![Imgur](http://i.imgur.com/jrUBAF7.png)
 
-### Design a web crawler
+### Concevoir un *crawler Web*
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Voir l'exercice et la solution](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
 
-### Design Mint.com
+### Concevoir Mint.com
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Voir l'exercice et la solution](solutions/system_design/mint/README.md)
 
 ![Imgur](http://i.imgur.com/V5q57vU.png)
 
-### Design the data structures for a social network
+### Concevoir la structure de données d'un réseau social
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Voir l'exercice et la solution](solutions/system_design/social_graph/README.md)
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### Concevoir un tableau associatif pour un moteur de recherche
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+
+[Voir l'exercice et la solution](solutions/system_design/query_cache/README.md)
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Concevoir le classement des ventes par catégorie d'Amazon
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Voir l'exercice et la solution](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### Concevoir un système qui peut supporter des millions d'utilisateurs sur AWS
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+
+[Voir l'exercice et la solution](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
