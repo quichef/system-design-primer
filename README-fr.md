@@ -100,7 +100,7 @@ Lisez les [directives de contribution](CONTRIBUTING.md).
     * [Étape 2: Lire l'article sur la mise à l'échelle](#step-2-review-the-scalability-article)
     * [Étapes suivantes](#next-steps)
 * [Performance vs scalabilité](#performance-vs-scalability)
-* [Latence vs haut débit](#latency-vs-throughput)
+* [Latence vs débit](#latence-vs-débit)
 * [Disponibilité vs cohérence](#availability-vs-consistency)
     * [Théorème CAP ou CDP](#cap-theorem)
         * [CP - Cohérence et tolérance au Partitionnement](#cp---consistency-and-partition-tolerance)
