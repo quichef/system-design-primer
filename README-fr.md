@@ -429,13 +429,13 @@ Another way to look at performance vs scalability:
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## Latency vs throughput
+## Latence vs débit
 
-**Latency** is the time to perform some action or to produce some result.
+**La latence** est le temps nécessaire à faire une action ou à produire un résultat
 
-**Throughput** is the number of such actions or results per unit of time.
+**Le débit** est le nombre de ces actions ou de ces résultats par unité de temps
 
-Generally, you should aim for **maximal throughput** with **acceptable latency**.
+Généralement, il faut viser un débit maximal et une latence acceptablle
 
 ### Source(s) and further reading
 
