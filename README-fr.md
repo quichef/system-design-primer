@@ -435,7 +435,7 @@ Another way to look at performance vs scalability:
 
 **Le débit** est le nombre de ces actions ou de ces résultats par unité de temps.
 
-Généralement, il faut viser un débit maximal et une latence acceptablle
+Généralement, il faut viser un débit maximal et une latence acceptable.
 
 ### Source(s) et lecture supplémentaires
 
