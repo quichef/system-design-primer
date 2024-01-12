@@ -437,7 +437,7 @@ Another way to look at performance vs scalability:
 
 Généralement, il faut viser un débit maximal et une latence acceptable.
 
-### Source(s) et lecture supplémentaires
+### Source(s) et lectures supplémentaires
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
