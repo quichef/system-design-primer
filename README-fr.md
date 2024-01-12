@@ -431,7 +431,7 @@ Another way to look at performance vs scalability:
 
 ## Latence vs débit
 
-**La latence** est le temps nécessaire à faire une action ou à produire un résultat
+**La latence** est le temps nécessaire à faire une action ou à produire un résultat.
 
 **Le débit** est le nombre de ces actions ou de ces résultats par unité de temps
 
