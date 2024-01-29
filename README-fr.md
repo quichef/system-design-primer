@@ -375,56 +375,58 @@ Consultez les liens suivants pour avoir une meilleure idée de ce qui est attend
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
-## System design topics: start here
+## Conception de systèmes : premiers pas
 
-New to system design?
-
+Nouveau dans la conception de systèmes ? 
+Dans un premier temps, vous aurez besoin d'une comprehension des principes communs, leurs concepts, utilisations, leurs avantages et leurs inconvenents.
 First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
 
-### Step 1: Review the scalability video lecture
+### Étape 1 : Regarder la vidéo sur la mise à l'échelle 
 
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* Sujets abordés:
+    * Mise à l'échelle verticale
+    * Mise à l'échelle horizontale
+    * Utilisation des caches
+    * Répartition de charge
+    * Replication de bases de données
+    * Partition de bases de données
 
-### Step 2: Review the scalability article
+### Étape 2 : Lire l'article sur la mise à l'échelle
 
 [Scalability](http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
+* Sujets abordés:
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
     * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Étapes suivantes
 
-Next, we'll look at high-level trade-offs:
+Ensuite, nous regarderons les compromis généraux
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Performance** contre **mise à l'échelle**
+* **Latence** contre **débit**
+* **Disponibilité** contre **consistance**
 
-Keep in mind that **everything is a trade-off**.
+Gardez à l'esprit que **tout est un compromis**.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Nous verrons ensuite plus spécifiquement certains sujets tels que les systèmes de nom de domaine, les réseaux de livraison de contenu et les répartiteurs de charge
 
-## Performance vs scalability
+## Performance contre mise à l'échelle
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Un service peut être mis à l'échelle si l'augmentation de ses **performances** est proportionnelle aux ressources ajoutées.
+En général, augmeneter les performances signifie servir plus d'unités de travail, mais cela peut aussi être servir des unités de travail plus grande, notamment lorsque les jeux de données grossissent.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Une autre manière de le voir :
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* Si vous avez un problème de **performances**, le système est lent pour un unique utilisateur
+* Si vous avez un problème de **mise à l'échelle**, le système est rapide pour un unique utilisateur, mais lent lorsque la charge est élevée
 
-### Source(s) and further reading
+
+### Sources et lectures supplémentaires
 
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
@@ -441,9 +443,9 @@ Généralement, il faut viser un débit maximal et une latence acceptable.
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## Disponibilité vs consistance
 
-### CAP theorem
+### Thérème CDP
 
 <p align="center">
   <img src="http://i.imgur.com/bgLMI2u.png">
@@ -451,25 +453,25 @@ Généralement, il faut viser un débit maximal et une latence acceptable.
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+Dans un système informatique distirbué, vous ne pouvez supporter que deux des garanties suivantes:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **Consistance** Chaque lecture reçoit l'écriture la plus récente, ou une erreur
+* **Disponibilité** Chaque requête reçoit une réponse, sans garantie que l'information est à jour
+* **Partitionnage** Le système continue de foncitonner malgré un partitionnage arbitraire, lié à une malfonction du réseau
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+*Les réseaux ne sont pas fiables, vous aurez donc besoin de supporter le partionnage.  Vous devrez faire un comprimis entre consistance et disponibilité*
 
-#### CP - consistency and partition tolerance
+#### CP - Consistance et partitionnage
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+Attendre une réponse depuis une partition peut amaener une erreur par faute de temps. CP est un bon choix si le besoin implique des opérations de lecture et d'écriture unitaires.
 
-#### AP - availability and partition tolerance
+#### DP - disponibilité et partitionnage
 
-Responses return the most recent version of the data available on a node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+Les répenses retournent la version la plus à jour de la donnée sur un noeud, qui peut ne pas être la dernière. Les opérations d'écriture peuvent prendre du temps à se propager sur les autres partitions.
 
-AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+DP est un bon choix si le besoin métier permet une [consistence eventuelle](#eventual-consistency) ou quand le syst§me se doit de continuer malgré des erreurs.
 
-### Source(s) and further reading
+### Source(s) et lectures supplémentaires
 
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
